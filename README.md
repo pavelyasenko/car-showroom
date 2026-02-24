@@ -17,4 +17,4 @@
 
 1. Клонуйте репозиторій:
    ```bash
-   git clone [https://github.com/pavelyasenko/car-showroom](https://github.com/pavelyasenko/car-showroom)
+   git clone [https://github.com/pavelyasenko/car-showroom]
