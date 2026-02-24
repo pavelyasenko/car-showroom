@@ -1,0 +1,17 @@
+@import './utils/varibles.scss';
+@import './utils/mxins.scss';
+@import './style/nav.scss';
+@import './style/header.scss';
+@import './style/footer.scss';
+@import './style/card.scss';
+@import './style/car-deatail.scss';
+
+html,body{
+    background-color: white;
+      height: 100%;
+      margin: 0;
+}
+
+.appContainer{
+margin: 0;
+}

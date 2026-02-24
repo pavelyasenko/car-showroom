@@ -1,0 +1,167 @@
+.car-detail-wrapper {
+  padding: 40px 0;
+  background: #fdfdfd;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    &:hover { text-decoration: underline; }
+  }
+
+  .car-detail__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+
+    @media (max-width: 992px) { grid-template-columns: 1fr; }
+  }
+
+  /* Слайдер */
+  .custom-slider {
+    position: relative;
+    height: 450px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+    .slider-track {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .slider-img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.8);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 2;
+      &:hover { background: #fff; }
+      &.prev { left: 20px; }
+      &.next { right: 20px; }
+    }
+
+    .slider-dots {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      .dot {
+        width: 10px;
+        height: 10px;
+        background: rgba(0,0,0,0.2);
+        border-radius: 50%;
+        cursor: pointer;
+        &.active { background: #007bff; width: 25px; border-radius: 10px; }
+      }
+    }
+  }
+
+  /* Инфо-блок */
+  .car-detail__info {
+    .brand-badge {
+      background: #eee;
+      padding: 5px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+    .car-title { font-size: 2.5rem; margin: 10px 0; color: #222; }
+    .sku { color: #888; font-size: 0.9rem; }
+
+    .price-block {
+      margin: 25px 0;
+      .current-price { font-size: 2.2rem; font-weight: 800; color: #27ae60; }
+      .discount { color: #e74c3c; margin-left: 15px; font-weight: 600; }
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 30px;
+      .spec-item {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        font-size: 0.9rem;
+        strong { margin-right: 5px; color: #555; }
+        .in-stock { color: #27ae60; font-weight: bold; }
+      }
+    }
+
+    .buy-button {
+      width: 100%;
+      padding: 18px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      &:hover { background: #0056b3; }
+    }
+  }
+
+  /* Отзывы и QR */
+  .car-detail__extra {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 40px;
+
+    @media (max-width: 768px) { grid-template-columns: 1fr; }
+
+    .review-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      .review-header {
+        display: flex; 
+        justify-content: space-between;
+        .review-date { color: #bbb; font-size: 0.8rem; }
+      }
+      .review-rating { color: #ffc107; margin: 10px 0; }
+    }
+
+    .qr-section {
+      text-align: center;
+      padding: 30px;
+      background: #f8f9fa;
+      border-radius: 20px;
+      .qr-image { width: 160px; margin: 20px 0; }
+    }
+  }
+}

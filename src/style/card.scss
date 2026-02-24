@@ -1,0 +1,134 @@
+.cards--container {
+  display: grid;
+  max-width: 1200px; 
+  margin: 0 auto;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: center; 
+  @include on-tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include on-desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  box-sizing: border-box;
+  padding: 12px;
+
+  @include on-tablet {
+    padding: 16px;
+  }
+
+  @include on-desktop {
+    padding: 20px;
+  }
+
+  border: 1px solid gray;
+  border-radius: 5px;
+
+  &__image {
+    margin: 16px 0 36px;
+    text-align: center;
+  }
+
+  &__photo {
+    width: 100%;
+    height: 200px;
+    @include on-tablet{
+      height: 300px;
+    }
+    @include on-desktop{
+      height: 500px;
+    }
+    object-fit: contain;
+  }
+  &__name {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 18px;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    color: $main-text-color;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__grade {
+    line-height: 16px;
+  }
+
+  &__prices {
+    display: flex;
+    justify-content: space-between;
+    line-height: 18px;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    color: $main-text-color;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+ &__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 70px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  background-color: $main-buton-color;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $main-text-color;
+
+  &:hover {
+    background-color: beige;
+    border: 1px solid royalblue;
+    transition-duration: 300ms;
+    color: black;
+  }
+}
+}
+.stars {
+  display: flex;
+
+  & :not(:last-child) {
+    margin-right: 4px;
+  }
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--1 &__star:nth-child(-n + 1),
+  &--2 &__star:nth-child(-n + 2),
+  &--3 &__star:nth-child(-n + 3),
+  &--4 &__star:nth-child(-n + 4),
+  &--5 &__star:nth-child(-n + 5) {
+    background-image: url(../images/star-active.svg);
+  }
+}
