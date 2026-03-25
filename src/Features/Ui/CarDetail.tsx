@@ -1,51 +1,25 @@
-import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import {Link } from "react-router-dom";
+import type { Car } from "../Cars/Model/type";
+import { HandleReview } from "../../Shared/Ui/Handele__review";
+import { useState } from "react";
 
-export default function CarDetail() {
-  const { id } = useParams();
-  const [car, setCar] = useState(null);
-  const [loading, setLoading] = useState(true);
+export const CarDetail = ({ car }: {car:Car}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    fetch(`https://dummyjson.com/products/${id}`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Автомобиль не найден");
-        return res.json();
-      })
-      .then((data) => {
-        setCar(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Ошибка загрузки:", err);
-        setLoading(false);
-      });
-  }, [id]);
-
-  // Логика слайдера
   const nextSlide = () => {
-    if (!car?.images) return;
-    setCurrentIndex((prevIndex) =>
-      prevIndex === car.images.length - 1 ? 0 : prevIndex + 1
-    );
+    if (car.images) {
+      setCurrentIndex((prev) => (prev + 1) % car.images.length);
+    }
   };
 
   const prevSlide = () => {
-    if (!car?.images) return;
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? car.images.length - 1 : prevIndex - 1
-    );
+    if (car.images) {
+      setCurrentIndex((prev) => (prev - 1 + car.images.length) % car.images.length);
+    }
   };
-
-  if (loading) return <div className="loader">Загрузка данных...</div>;
-  
-  if (!car) return (
-    <div className="error-page">
-      <h2>Упс! Машина не найдена</h2>
-      <Link to="/">Вернуться в каталог</Link>
-    </div>
-  );
+    if (!car) {
+        return <div className="loading">Загрузка данных о машине...</div>;
+      }
 
   return (
     <div className="car-detail-wrapper">
@@ -143,6 +117,7 @@ export default function CarDetail() {
                 </div>
               ))}
             </div>
+            <HandleReview />
           </div>
 
           <div className="qr-section">

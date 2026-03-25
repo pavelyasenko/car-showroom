@@ -1,10 +1,7 @@
-
-
 export function Footer() {
   return (
     <footer className="footer">
-        {/* Контакты / соцсети */}
-        <div className="footerInfo">
+        <div className="footer-info">
           <p>© 2026 MyCompany</p>
           <p>Email: info@mycompany.com</p>
         </div>

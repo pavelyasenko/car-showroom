@@ -84,7 +84,7 @@
     font-size: 16px;
   }
 
- &__button {
+ &-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,39 +96,18 @@
   text-align: center;
   background-color: $main-buton-color;
   border-radius: 5px;
+  border:  black 2px;
   cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
-  color: $main-text-color;
+  color: rgba(255, 255, 255, 0.669);
+  background-color: grey;
 
   &:hover {
-    background-color: beige;
-    border: 1px solid royalblue;
+    background-color: green;
+    border: 3px solid rgba(27, 188, 241, 0.24);
     transition-duration: 300ms;
-    color: black;
+    color: whitesmoke;
   }
 }
-}
-.stars {
-  display: flex;
-
-  & :not(:last-child) {
-    margin-right: 4px;
-  }
-
-  &__star {
-    height: 16px;
-    width: 16px;
-    background-image: url(../images/star.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  &--1 &__star:nth-child(-n + 1),
-  &--2 &__star:nth-child(-n + 2),
-  &--3 &__star:nth-child(-n + 3),
-  &--4 &__star:nth-child(-n + 4),
-  &--5 &__star:nth-child(-n + 5) {
-    background-image: url(../images/star-active.svg);
-  }
 }

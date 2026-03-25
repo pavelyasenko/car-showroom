@@ -1,17 +1,17 @@
-@import './utils/varibles.scss';
-@import './utils/mxins.scss';
-@import './style/nav.scss';
-@import './style/header.scss';
-@import './style/footer.scss';
-@import './style/card.scss';
-@import './style/car-deatail.scss';
+@import'./App/Styles/general_styles.scss';
+@import './Utils/mixin.scss';
+@import './App/Styles/header.scss';
+@import './App/Styles/card.scss';
+@import './App/Styles/footer.scss';
+@import './App/Styles/car-deatail.scss';
+@import'./App/Styles/HandleReview.scss';
 
-html,body{
-    background-color: white;
-      height: 100%;
-      margin: 0;
+html{
+    margin: 0;
+    padding: 0;
 }
-
-.appContainer{
-margin: 0;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(236, 234, 234);
 }

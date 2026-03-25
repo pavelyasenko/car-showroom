@@ -1,0 +1,27 @@
+.handle__review{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 5px;
+    &-name{
+        width: 20vh;
+        margin-bottom: 5px;
+    }
+
+    &-email{
+        width: 20vh;
+        margin-bottom: 5px;
+    }
+
+    &-comment{
+        width: 30vh;
+        height: 80px;
+        overflow: hidden;
+        resize: none;
+    }
+
+    &-button{
+        width: 20vh;
+    }
+}
