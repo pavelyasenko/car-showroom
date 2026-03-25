@@ -12,6 +12,5 @@ export const CarPage = () => {
   if (loading) return <div>Загрузка...</div>;
   if (!currentCar) return <div>Машина не найдена</div>;
 
-  // Вот здесь мы передаем обязательный пропс car
   return <CarDetail car={currentCar} />;
 };

@@ -17,9 +17,16 @@ export const CarDetail = ({ car }: {car:Car}) => {
       setCurrentIndex((prev) => (prev - 1 + car.images.length) % car.images.length);
     }
   };
-    if (!car) {
+    
+  if (!car) {
         return <div className="loading">Загрузка данных о машине...</div>;
       }
+
+  const [isReserved, setIsReserved] = useState(false);
+
+  const handleToggle = () => {
+    setIsReserved(!isReserved);
+  }
 
   return (
     <div className="car-detail-wrapper">
@@ -94,7 +101,12 @@ export const CarDetail = ({ car }: {car:Car}) => {
               ))}
             </div>
 
-            <button className="buy-button">Забронировать {car.title}</button>
+            <button 
+              className={`buy-button${isReserved ? '-reserved' :''}`} 
+              onClick={handleToggle}
+            >
+              {isReserved ? 'Забронировано' : `Забронировать ${car.title}`}
+            </button>
           </div>
         </div>
 

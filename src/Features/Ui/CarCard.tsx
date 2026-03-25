@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom"
 import type { Car } from "../Cars/Model/type"
+import { useState } from "react";
 
 
 export const CarCard = ({ car }: {car:Car}) => {
+
   return (
     <>
       <div key={car.id} className="card">

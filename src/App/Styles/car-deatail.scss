@@ -127,10 +127,20 @@
       cursor: pointer;
       transition: background 0.3s;
       &:hover { background: #0056b3; }
+      &-reserved{
+      width: 100%;
+      padding: 18px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      }
     }
   }
 
-  /* Отзывы и QR */
   .car-detail__extra {
     margin-top: 60px;
     display: grid;

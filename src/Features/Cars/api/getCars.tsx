@@ -13,7 +13,7 @@ export function getCars(query: string): Promise<Car[]> {
     })
     .then((data: CarResponse) => {
       return data.products.filter((car) =>
-        JSON.stringify(car).toLowerCase().includes(query.toLowerCase())
+      car.title.toLowerCase().includes(query.toLowerCase())
       )
     })
     .catch(() => [])
